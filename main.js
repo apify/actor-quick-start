@@ -19,10 +19,11 @@ Apify.main(async () => {
     }
 
     // Here's the place for your magic...
+    console.log(`Input message: ${input.message}`);
 
     // Store the output
     const output = {
-        message: `${input.message} Hello world!`
+        message: `${input.message} Hello my friend!`
     };
     await Apify.setValue('OUTPUT', output)
 });
