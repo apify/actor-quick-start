@@ -1,4 +1,4 @@
-# Source code of the apify/quick-start act
+# apify/quick-start
 
 This is a simple Apify act that contains all the boilerplate
 that you might need when creating new act hosted in a Git repository.
