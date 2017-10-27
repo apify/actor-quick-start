@@ -1,7 +1,7 @@
 # apify/quick-start
 
-This is a simple Apify act that contains all the boilerplate
-that you might need when creating new act hosted in a Git repository.
+This is a simple Apify act that contains the basic boilerplate
+that you need when creating a new act hosted in a Git repository.
 Fill free to copy it, change it and use it in your acts.
 
 Are you missing anything? Something not clear? Please let us know at support@apify.com
