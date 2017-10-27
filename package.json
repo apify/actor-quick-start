@@ -1,0 +1,12 @@
+{
+  "name": "act-quick-start",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "apify": "^0.4.32"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test-local": "APIFY_DEV_KEY_VALUE_STORE_DIR=./kv-store-dev/ node main.js"
+  }
+}
