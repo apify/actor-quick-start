@@ -7,9 +7,6 @@
 # For more information, see https://www.apify.com/docs/actor#base-images
 FROM apify/actor-node-basic
 
-# Tell Node.js this is a production environemnt
-ENV NODE_ENV=production
-
 # Copy all files and directories from the directory to the Docker image
 COPY . ./
 
