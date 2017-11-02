@@ -37,8 +37,8 @@ After that you can run the built Docker image locally using:
 docker run -e "APIFY_DEV_KEY_VALUE_STORE_DIR=./kv-store-dev/" XYZ
 ```
 
-Where `XYZ` is ID of the Docker image built in the previous command.
-See below for detailed description of the `APIFY_DEV_KEY_VALUE_STORE_DIR`
+Where `XYZ` is ID of the Docker image built in the previous step.
+Please see below for a detailed description of the `APIFY_DEV_KEY_VALUE_STORE_DIR`
 environment variable.
 
 
