@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "apify": "^0.4.32"
+    "apify": "^0.4.32",
+    "type-check": "^0.3.2"
   },
   "devDependencies": {},
   "scripts": {

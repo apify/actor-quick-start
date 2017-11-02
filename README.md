@@ -6,6 +6,43 @@ Fill free to copy it, change it and use it in your acts.
 
 Are you missing anything? Something not clear? Please let us know at support@apify.com
 
+To run the act in your local environment, simply run the following commands:
+
+```bash
+npm install --quiet --only=prod --no-optional
+npm run test-local
+```
+
+In order to test the build of the Docker image, run:
+
+```
+docker build ./
+```
+
+On success, the command will produce something like:
+
+```
+...
+Removing intermediate container 22915a918e4c
+Step 6/6 : CMD node main.js
+ ---> Running in 7288f9a12cf0
+ ---> 0d82ea8a648d
+Removing intermediate container 7288f9a12cf0
+Successfully built XYZ
+```
+
+After that you can run the built Docker image locally using:
+
+```bash
+docker run -e "APIFY_DEV_KEY_VALUE_STORE_DIR=./kv-store-dev/" XYZ
+```
+
+Where `XYZ` is ID of the Docker image built in the previous command.
+See below for detailed description of the `APIFY_DEV_KEY_VALUE_STORE_DIR`
+environment variable.
+
+
+
 ## main.js
 
 Contains the source code of the act in Node.js 7+.
@@ -17,6 +54,7 @@ See [NPM docs](https://docs.npmjs.com/files/package.json) for more details.
 
 ## Dockerfile
 
+Contains instructions for Docker how to build the image for the act.
 For more information, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/).
 
 ## README.md
