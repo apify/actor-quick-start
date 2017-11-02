@@ -41,6 +41,15 @@ Where `XYZ` is ID of the Docker image built in the previous step.
 Please see below for a detailed description of the `APIFY_DEV_KEY_VALUE_STORE_DIR`
 environment variable.
 
+If there is any problem with the built image, you might try troubleshooting it
+by starting the container in interactive mode using:
+
+```
+docker run -it XYZ /bin/bash
+```
+
+Note that this requires a base Docker image that contains bash or some other interactive shell.
+
 
 
 ## main.js
