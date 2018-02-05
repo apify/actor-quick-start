@@ -70,7 +70,7 @@ For more information, see [Dockerfile reference](https://docs.docker.com/engine/
 
 The readme file is used to generate a long description of the act that is displayed in the
 [Apify library](https://www.apify.com/apify/quick-start) as well as on the project's
-[GitHub page](https://github.com/Apifier/act-quick-start).
+[GitHub page](https://github.com/apifytech/act-quick-start).
 
 ## kv-store-dev
 
