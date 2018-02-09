@@ -9,7 +9,7 @@ Are you missing anything? Something not clear? Please let us know at support@api
 To run the act in your local environment, simply run the following commands:
 
 ```bash
-npm install --quiet --only=prod --no-optional
+npm install
 npm run test-local
 ```
 
