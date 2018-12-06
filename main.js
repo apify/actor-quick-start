@@ -1,25 +1,16 @@
 const Apify = require('apify');
-const typeCheck = require('type-check').typeCheck;
-
-// Definition of the input
-const INPUT_TYPE = `{
-    message: Maybe String,
-}`;
 
 Apify.main(async () => {
-    // Fetch the input and check it has a valid format
-    // You don't need to check the input, but it's a good practice.
+    // Fetch the input of the actor.
+    // If you're using INPUT_SCHEMA.json, the input is automatically checked for you.
     const input = await Apify.getValue('INPUT');
-    if (!typeCheck(INPUT_TYPE, input)) {
-        console.log('Expected input:');
-        console.log(INPUT_TYPE);
-        console.log('Received input:');
+    if (!input || !input.message) {
         console.dir(input);
-        throw new Error('Received invalid input');
+        throw new Error('No message provided on the INPUT!');
     }
 
     // Here's the place for your magic...
-    console.log(`Input message: ${input.message}`);
+    console.log(`Input message: ${input ? input.message : 'N/A'}`);
 
     // Store the output
     const output = {
