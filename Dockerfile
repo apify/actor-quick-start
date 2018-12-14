@@ -15,6 +15,7 @@ COPY . ./
 RUN npm install --quiet --only=prod --no-optional \
  && npm list
 
-# Define that start command. By default, the Apify's Docker images start Node.js
-# and let it run the "main.js" file. The command can look something like this:
+# By default, the Apify's Docker images start Node.js and let it run the "main.js" file.
+# You don't need to override this, unless you want to start the image some other way.
+# In that case you can override the start command using the CMD instruction:
 # CMD [ "npm", "start" ]
