@@ -11,7 +11,7 @@ npm install
 npm run start
 ```
 
-Alternatively, if you have [Apify CLI](https://www.apify.com/docs/cli) installed, you can start the actor by running:
+Alternatively, if you have [Apify CLI](https://apify.com/docs/cli) installed, you can start the actor by running:
 
 ```bash
 apify run
@@ -71,7 +71,7 @@ For more information, see [Dockerfile reference](https://docs.docker.com/engine/
 ## README.md
 
 The readme file is used to generate a long description of the actor that is displayed in the
-[Apify library](https://www.apify.com/apify/quick-start) as well as on the project's
+[Apify library](https://apify.com/apify/quick-start) as well as on the project's
 [GitHub page](https://github.com/apifytech/actor-quick-start).
 
 ## apify_storage

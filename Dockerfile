@@ -4,7 +4,7 @@
 #  apify/actor-node-chrome
 #  apify/actor-node-chrome-xvfb
 # However, you can use any other image from Docker Hub.
-# For more information, see https://www.apify.com/docs/actor#base-images
+# For more information, see https://apify.com/docs/actor#base-images
 FROM apify/actor-node-basic
 
 # Copy all files and directories from the directory to the Docker image
