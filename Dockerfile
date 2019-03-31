@@ -9,7 +9,7 @@
 #  apify/actor-node-chrome-xvfb (Node.js 10 + Chrome + Xvfb on Debian)
 # For more information, see https://apify.com/docs/actor#base-images
 # Note that you can use any other image from Docker Hub.
-FROM apify/actor-node-basic
+FROM apify/actor-node-chrome
 
 # Copy all files and directories with the source code
 COPY . ./

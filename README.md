@@ -17,7 +17,7 @@ Alternatively, if you have [Apify CLI](https://apify.com/docs/cli) installed, yo
 apify run
 ```
 
-In order to test the build of the Docker image, run:
+In order to test the build of the Docker image, you can run:
 
 ```
 docker build ./
@@ -53,41 +53,51 @@ docker run -it XYZ /bin/bash
 Note that this requires a base Docker image that contains bash or some other interactive shell.
 
 
+## `.gitignore`
 
-## main.js
+Specifies files and directories that shouldn't be included in the Git repository.
 
-The main Node.js source code of your actor.
-It is referenced from the `scripts` section of the `package.json` file,
-so that it can be started by running `npm start`.
-
-## package.json
-
-The file is used by NPM to maintain metadata about the Node.js source code,
-such as the list of dependencies.
-For details, see [NPM documentation](https://docs.npmjs.com/files/package.json).
-
-## apify.json
+## `apify.json`
 
 The file is used by [Apify CLI](https://apify.com/docs/cli)
-and it contains information linking your local actor with the
+and it contains information linking your local source code directory with the
 actor on the Apify platform.
 You only need this file if you want to run commands such as `apify run`
 or `apify push`.
 
-## Dockerfile
+## `Dockerfile`
 
 Contains instructions how to build a Docker image that will contain
 all the code and configuration needed to run your actor.
 For more information, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/).
 
-## README.md
+## `INPUT_SCHEMA.json`
+
+Defines schema for the actor input. It is used by the Apify platform
+to automatically check the input for the actor and to generate
+a user interface to help users of your actor to run it.
+For more information, see [Input Schema documentation](https://apify.com/docs/actor/input-schema). 
+
+## `main.js`
+
+The main Node.js source code of your actor.
+It is referenced from the `scripts` section of the `package.json` file,
+so that it can be started by running `npm start`.
+
+## `package.json`
+
+The file is used by NPM to maintain metadata about the Node.js source code,
+such as the list of dependencies.
+For details, see [NPM documentation](https://docs.npmjs.com/files/package.json).
+
+## `README.md`
 
 Contains a documentation what your actor does and how to use it,
 which is then displayed in the app or [library](https://apify.com/apify/quick-start).
 It's always a good idea to write a good README.md, in a few months not even you
 will remember all the details about the actor.
 
-## apify_storage
+## `apify_storage`
 
 This directory contains data from
 [Apify SDK storages](https://sdk.apify.com/docs/guides/datastorage)
