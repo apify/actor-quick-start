@@ -1,6 +1,6 @@
-This is a simple Apify actor that contains the basic boilerplate
-using a custom Dockerfile and hosted in a Git repository.
-Fill free to copy it, change it and use it in your own actors.
+This is a simple Apify actor that serves as a basic boilerplate.
+It has a Node.js source code, custom Dockerfile and it's hosted in a Git repository.
+Feel free to copy this actor, modify it and use it in your own actors.
 
 Are you missing anything? Something not clear? Please let us know at support@apify.com
 
@@ -56,32 +56,52 @@ Note that this requires a base Docker image that contains bash or some other int
 
 ## main.js
 
-Contains the source code of the actor in Node.js 7+.
+The main Node.js source code of your actor.
+It is referenced from the `scripts` section of the `package.json` file,
+so that it can be started by running `npm start`.
 
 ## package.json
 
-The file used by NPM to maintain meta-data about the package, such as list of dependencies.
-See [NPM docs](https://docs.npmjs.com/files/package.json) for more details.
+The file is used by NPM to maintain metadata about the Node.js source code,
+such as the list of dependencies.
+For details, see [NPM documentation](https://docs.npmjs.com/files/package.json).
+
+## apify.json
+
+The file is used by [Apify CLI](https://apify.com/docs/cli)
+and it contains information linking your local actor with the
+actor on the Apify platform.
+You only need this file if you want to run commands such as `apify run`
+or `apify push`.
 
 ## Dockerfile
 
-Contains instructions for Docker how to build the image for the actor.
+Contains instructions how to build a Docker image that will contain
+all the code and configuration needed to run your actor.
 For more information, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/).
 
 ## README.md
 
-The readme file is used to generate a long description of the actor that is displayed in the
-[Apify library](https://apify.com/apify/quick-start) as well as on the project's
-[GitHub page](https://github.com/apifytech/actor-quick-start).
+Contains a documentation what your actor does and how to use it,
+which is then displayed in the app or [library](https://apify.com/apify/quick-start).
+It's always a good idea to write a good README.md, in a few months not even you
+will remember all the details about the actor.
 
 ## apify_storage
 
-When running the actor on the Apify cloud, the actor is automatically assigned
-a key-value store that is used to store actor's input, output or any other data.
-The `apify_storage/key_value_stores/default` directory is used to emulate this storage
-during the local development of your actor.
+This directory contains data from
+[Apify SDK storages](https://sdk.apify.com/docs/guides/datastorage)
+during local development, such as the key-value stores,
+datasets and request queues.
+Typically you don't want to have the `apify_storage` directory in Git repo,
+but in this boilerplate we keep the `INPUT.json` file in Git
+for documentation purposes.
 
-The files in the directory represent the records in the key-value store - the name
+When running the actor on the Apify platform, the actor is automatically assigned
+a key-value store that is used to store actor's input, output or any other data.
+The `apify_storage/key_value_stores/default` directory is used to emulate this store
+during the local development of your actor.
+The files in the directory represent the records in the key-value store: the name
 of each file corresponds to its key and the content to the value.
 
 For example, calling `Apify.getValue('INPUT')` will return the content

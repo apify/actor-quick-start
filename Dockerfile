@@ -1,21 +1,29 @@
+# Dockerfile contains instructions how to build a Docker image that will contain
+# all the code and configuration needed to run your actor. For a complete
+# Dockerfile reference, see https://docs.docker.com/engine/reference/builder/
 
-# Here you choose the base Docker image for the act. Apify provides the following images:
-#  apify/actor-node-basic
-#  apify/actor-node-chrome
-#  apify/actor-node-chrome-xvfb
-# However, you can use any other image from Docker Hub.
+# First, specify the base Docker image. Apify provides the following base images
+# for your convenience:
+#  apify/actor-node-basic (Node.js 10 on Alpine Linux)
+#  apify/actor-node-chrome (Node.js 10 + Chrome on Debian)
+#  apify/actor-node-chrome-xvfb (Node.js 10 + Chrome + Xvfb on Debian)
 # For more information, see https://apify.com/docs/actor#base-images
+# Note that you can use any other image from Docker Hub.
 FROM apify/actor-node-basic
 
-# Copy all files and directories from the directory to the Docker image
+# Copy all files and directories with the source code
 COPY . ./
 
-# Install NPM packages, skip optional and development dependencies to keep the image small,
-# avoid logging to much and show log the dependency tree
-RUN npm install --quiet --only=prod --no-optional \
- && npm list
+# Install NPM packages, skip optional and development dependencies to keep the
+# image small. Avoid logging to much and print the dependency tree for debugging
+RUN npm --quiet set progress=false \
+ && npm install --only=prod --no-optional \
+ && echo "Installed NPM packages:" \
+ && npm list \
+ && echo "Node.js version:" \
+ && node --version \
+ && echo "NPM version:" \
+ && npm --version
 
-# By default, the Apify's Docker images start Node.js and let it run the "main.js" file.
-# You don't need to override this, unless you want to start the image some other way.
-# In that case you can override the start command using the CMD instruction:
-# CMD [ "npm", "start" ]
+# Specify how to run the source code
+CMD npm start

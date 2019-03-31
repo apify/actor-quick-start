@@ -1,20 +1,26 @@
+// This is the main Node.js source code file of your actor.
+// It is referenced from the "scripts" section of the package.json file,
+// so that it can be started by running "npm start".
+
 const Apify = require('apify');
 
 Apify.main(async () => {
-    // Fetch the input of the actor.
-    // If you're using INPUT_SCHEMA.json, the input is automatically checked for you.
-    const input = await Apify.getValue('INPUT');
-    if (!input || !input.message) {
-        console.dir(input);
-        throw new Error('No message provided on the INPUT!');
-    }
+    // Get input of the actor.
+    // If you'd like to have your input checked and generate a user interface
+    // for it, add INPUT_SCHEMA.json file to your actor.
+    // For more information, see https://apify.com/docs/actor/input-schema
+    const input = await Apify.getInput();
+    console.log('Input:');
+    console.dir(input);
 
-    // Here's the place for your magic...
-    console.log(`Input message: ${input ? input.message : 'N/A'}`);
+    // Do something useful here...
 
-    // Store the output
+    // Save output
     const output = {
-        message: `${input.message} Hello my friend!`
+        receivedInput: input,
+        message: 'Hello sir!',
     };
-    await Apify.setValue('OUTPUT', output)
+    console.log('Output:');
+    console.dir(output);
+    await Apify.setValue('OUTPUT', output);
 });
