@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "apify": "^0.19.1"
+    "apify": "^0.20.0"
   },
   "devDependencies": {
     "cross-env": "^5.1.3"
