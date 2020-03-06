@@ -31,7 +31,9 @@ RUN npm --quiet set progress=false \
 # Next, copy the remaining files and directories with the source code.
 # Since we do this after NPM install, quick build will be really fast
 # for most source file changes.
-COPY . ./
+# Note that because we are also copying the "apify_storage" directory, we
+# need to set a correct owner to make it writable, for local runs in Docker.
+COPY --chown=myuser . ./
 
 # Optionally, specify how to launch the source code of your actor.
 # By default, Apify's base Docker images define the CMD instruction
