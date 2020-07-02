@@ -101,7 +101,7 @@ will remember all the details about the actor.
 ## `apify_storage`
 
 This directory contains data from
-[Apify SDK storages](https://sdk.apify.com/docs/guides/datastorage)
+[Apify SDK storages](https://sdk.apify.com/docs/guides/data-storage)
 during local development, such as the key-value stores,
 datasets and request queues.
 Typically you don't want to have the `apify_storage` directory in Git repo,
@@ -119,5 +119,5 @@ For example, calling `Apify.getValue('INPUT')` will return the content
 of the `apify_storage/key_value_stores/default/INPUT.json` file parsed as JSON. Similarly, calling
 `Apify.setValue('OUTPUT', ...)` will write a file to `apify_storage/key_value_stores/default/OUTPUT.json`.
 
-For more information, see the [Getting Started](https://sdk.apify.com/docs/guides/gettingstarted) tutorial
+For more information, see the [Getting Started](https://sdk.apify.com/docs/guides/getting-started) tutorial
 of the [Apify SDK](https://sdk.apify.com).
